@@ -3,9 +3,9 @@
         "ms-vscode.cpptools",
         "bazelbuild.vscode-bazel",
         "ms-vscode.cmake-tools",
-        "ms-python.python",
         "wmaurer.change-case",
         "ms-vscode.cpptools-themes",
-        "devondcarew.bazel-code"
+        "devondcarew.bazel-code",
+		"ms-python.vscode-pylance",
     ]
 }

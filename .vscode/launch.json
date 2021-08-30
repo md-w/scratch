@@ -8,7 +8,7 @@
             "name": "Launch",
             "request": "launch",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "environment": [],
             "console": "integratedTerminal",
             "preLaunchTask": "bazel build (Debug)",
@@ -28,9 +28,17 @@
             "linux": {
                 "name": "Launch (Linux)",
                 "request": "launch",
-                "type": "gdb",
-                "program": "${workspaceFolder}/bazel-out/local_linux-dbg/bin/cpp-protobuf/main/cpp-protobuf",
-                "cwd": "${workspaceFolder}/bazel-out/local_linux-dbg/bin/cpp-protobuf/main/cpp-protobuf.runfiles/__main__/",
+                "type": "cppdbg",
+                "MIMode": "gdb",
+                "program": "${workspaceFolder}/bazel-bin/cpp-protobuf/main/cpp-protobuf",
+                "cwd": "${workspaceFolder}",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
             },
         }
     ]

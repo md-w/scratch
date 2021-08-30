@@ -6,8 +6,9 @@ cc_library(
     srcs = glob(["src/*.cpp"]),
     hdrs = glob(["inc/*.h"]),
     includes = ["inc"],
+    visibility = ["//visibility:public"],
     deps = [
-        "@com_github_spdlog//:spdlog", 
+        "@com_github_spdlog//:spdlog",
         "@com_google_absl//absl/debugging:failure_signal_handler",
         "@com_google_absl//absl/debugging:stacktrace",
         "@com_google_absl//absl/debugging:symbolize",
@@ -15,5 +16,4 @@ cc_library(
         "@com_google_absl//absl/time",
         "@com_google_googletest//:gtest_main",
     ],
-    visibility = ["//visibility:public"],
 )
