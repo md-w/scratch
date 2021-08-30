@@ -1,0 +1,52 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "bazel build (Debug)",
+      "type": "shell",
+      "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c dbg",
+      "windows": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf --experimental_enable_runfiles -c dbg"
+      },
+      "osx": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c dbg --spawn_strategy=standalone",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "bazel build (Release)",
+      "type": "shell",
+      "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c opt",
+      "windows": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf --experimental_enable_runfiles -c opt"
+      },
+      "osx": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c opt --spawn_strategy=standalone",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "label": "bazel run benchmark (Release)",
+      "type": "shell",
+      "command": "bazel run //cpp-protobuf/main:cpp-protobuf -c opt -- --cpp-protobuf/main/BUILD",
+      "windows": {
+        "command": "bazel run //cpp-protobuf/main:cpp-protobuf --experimental_enable_runfiles -c opt -- --cpp-protobuf/main/BUILD"
+      },
+      "osx": {
+        "command": "bazel run //cpp-protobuf/main:cpp-protobuf -c opt --spawn_strategy=standalone -- --cpp-protobuf/main/BUILD",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    }
+  ]
+}
