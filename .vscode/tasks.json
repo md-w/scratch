@@ -19,6 +19,21 @@
       },
     },
     {
+      "label": "bazel build (Debug) generate compile commands",
+      "type": "shell",
+      "command": "bazel build --experimental_action_listener=//tools/actions:generate_compile_commands_listener //cpp-protobuf/main:cpp-protobuf -c dbg",
+      "windows": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf --experimental_enable_runfiles -c dbg"
+      },
+      "osx": {
+        "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c dbg --spawn_strategy=standalone",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
       "label": "bazel build (Release)",
       "type": "shell",
       "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c opt",
