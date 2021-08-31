@@ -4,6 +4,49 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
+        // bazel-bin/benchmarks/cpp/cpp.exe
+        {
+            "name": "LaunchBenchmark",
+            "request": "launch",
+            "args": ["benchmarks/datasets/google_message2/dataset.google_message2.pb"],
+            "stopAtEntry": true,
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "bazel build benchmark (Debug)",
+            "type": "cppvsdbg",
+            "program": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe",
+            "cwd": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe.runfiles/__main__/",
+            "windows": {
+                "name": "LaunchBenchmark (Windows)",
+                "request": "launch",
+                "type": "cppvsdbg",
+                "program": "${workspaceFolder}/bazel-bin/benchmarks/cpp/cpp.exe",
+                // "cwd": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe.runfiles/__main__/",
+                "cwd": "${workspaceRoot}",
+                // "sourceFileMap": {
+                //     "C:/Users/das_m/_bazel_das_m/zwq6xk4p/execroot/__main__/": "${workspaceFolder}"
+                // }
+                "sourceFileMap": {
+                    "C:/Users/vadmin/_bazel_vadmin/liqdcuv5/execroot/__main__/": "${workspaceFolder}"
+                }
+            },
+            "linux": {
+                "name": "LaunchBenchmark (Linux)",
+                "request": "launch",
+                "type": "cppdbg",
+                "MIMode": "gdb",
+                "program": "${workspaceFolder}/bazel-bin/benchmarks/cpp/cpp",
+                "cwd": "${workspaceFolder}",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+        },
         {
             "name": "Launch",
             "request": "launch",
@@ -19,8 +62,9 @@
                 "name": "Launch (Windows)",
                 "request": "launch",
                 "type": "cppvsdbg",
-                "program": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe",
-                "cwd": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe.runfiles/__main__/",
+                "program": "${workspaceFolder}/bazel-bin/cpp-protobuf/main/cpp-protobuf.exe",
+                // "cwd": "${workspaceFolder}/bazel-out/x64_windows-dbg/bin/cpp-protobuf/main/cpp-protobuf.exe.runfiles/__main__/",
+                "cwd": "${workspaceRoot}",
                 "sourceFileMap": {
                     "C:/Users/das_m/_bazel_das_m/zwq6xk4p/execroot/__main__/": "${workspaceFolder}"
                 }

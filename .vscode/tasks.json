@@ -4,6 +4,24 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "bazel build benchmark (Debug)",
+      "type": "shell",
+      "command": "bazel build //benchmarks/cpp:cpp -c dbg",
+      "windows": {
+        "command": "bazel build //benchmarks/cpp:cpp --experimental_enable_runfiles -c dbg"
+      },
+      "linux":{
+        "command": "bazel build //benchmarks/cpp:cpp --experimental_enable_runfiles -c dbg"
+      },
+      "osx": {
+        "command": "bazel build //benchmarks/cpp:cpp -c dbg --spawn_strategy=standalone",
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
       "label": "bazel build (Debug)",
       "type": "shell",
       "command": "bazel build //cpp-protobuf/main:cpp-protobuf -c dbg",

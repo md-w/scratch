@@ -107,10 +107,10 @@ def deps_setup():
     )
 
     http_archive(
-        name = "com_google_benchmark",
-        strip_prefix = "benchmark-1.5.6",
-        urls = ["https://github.com/google/benchmark/archive/refs/tags/v1.5.6.zip"],
-        sha256 = "03ddc88d9f381b056bc742592fb46cea11600329ecc7c9604618cdca438adee6",
+        name = "com_google_protobuf",
+        strip_prefix = "protobuf-3.17.3",
+        urls = ["https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.17.3.zip"],
+        sha256 = "528927e398f4e290001886894dac17c5c6a2e5548f3fb68004cfb01af901b53a",
     )
 
     http_archive(

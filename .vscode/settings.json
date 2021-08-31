@@ -98,4 +98,6 @@
     },
     "python.formatting.provider": "yapf",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 120 }",
+    "bazel.buildifierPath": "C:\\bazel\\buildifier.exe",
+    "bazel.buildifierFixOnFormat": true,
 }
